@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="hover.css" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <div class="loginBackgroundContainer">
+      <div class="cadasterContainer">
+        <div class="infoTitle">
+          <div class="rowInfos">
+            <span class="material-symbols-outlined"> contacts_product </span>
+            <h1>ContatoCerto</h1>
+          </div>
+          <h5>Organize, Conecte, Simplifique</h5>
+        </div>
+        <div class="loginInfosContainer">
+          <form>
+            <label for="userName">Nome</label>
+            <input
+              id="userName"
+              type="text"
+              name="name"
+              placeholder="Sebastian vettel"
+            />
+            <label for="userEmail">Email</label>
+            <input
+              name="email"
+              id="userEmail"
+              type="email"
+              placeholder="email@exemplo.com"
+            />
+            <label for="userPass">Senha</label>
+            <div class="showPassContainer">
+              <input
+                name="pass"
+                id="userPass"
+                type="password"
+                placeholder="senha@senha123"
+              />
+              <i class="fa-solid fa-eye hvr-pop"></i>
+            </div>
+            <div class="validadeKeyContainer">
+              <p>A senha deve conter pelo menos 8 carateres</p>
+              <p>A senha deve conter pelo menos 1 caratere especial</p>
+              <p>A senha deve conter pelo menos 1 letra maiúscula</p>
+            </div>
+
+            <button class="hvr-round-corners">Entrar</button>
+            <span
+              >Ainda não tem conta? Clique
+              <a class="hvr-underline-from-left" href="./login.html">aqui</a>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/a2fc44ee16.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./cadaster.js"></script>
+  </body>
+</html>
