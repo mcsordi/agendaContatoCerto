@@ -135,12 +135,18 @@ body {
   color: #fff;
   width: 65%;
   height: 2.5rem;
-  margin-top: 48px;
+  margin-top: 26px;
   border-radius: 2px;
   background-color: #172554;
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 12px;
+}
+#noLoginMsg {
+  margin-top: 1rem;
+  margin-top: 26px;
+  text-align: center;
+  color: #e60c0d;
 }
 
 .showPassContainer {

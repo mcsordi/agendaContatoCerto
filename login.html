@@ -23,19 +23,27 @@
           <h5>Organize, Conecte, Simplifique</h5>
         </div>
         <div class="loginInfosContainer">
-          <form>
+          <form method="get">
             <label for="userEmail">Email</label>
             <input
               id="userEmail"
               type="email"
               placeholder="email@exemplo.com"
+              name="email"
+              required
             />
             <label for="userPass">Senha</label>
-            <input
-              id="userPassLogin"
-              type="password"
-              placeholder="senha@senha123"
-            />
+            <div class="showPassContainer">
+              <input
+                id="userPass"
+                type="password"
+                placeholder="senha@senha123"
+                name="pass"
+                required
+              />
+              <i class="fa-solid fa-eye hvr-pop"></i>
+            </div>
+            <p id="noLoginMsg"></p>
             <button class="hvr-round-corners">Entrar</button>
 
             <span

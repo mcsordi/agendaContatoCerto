@@ -2,7 +2,7 @@ const buttonFormLogin = document.querySelector("button");
 const userName = document.getElementById("userName");
 const userEmail = document.getElementById("userEmail");
 const userPass = document.getElementById("userPass");
-const endpoint = "http://127.0.0.1:1880/ContatoCerto";
+const endpoint = "http://127.0.0.1:3005";
 const nameInvalid = document.getElementById("nameInvalid");
 const emailInvalid = document.getElementById("emailInvalid");
 const iconInvalid = document.querySelectorAll(".validadeKeyContainer p");
@@ -10,15 +10,9 @@ const messageInvalidName = document.createElement("p");
 messageInvalidName.setAttribute("id", "messageInvalidName");
 const messageInvalidEmail = document.createElement("p");
 messageInvalidEmail.setAttribute("id", "messageInvalidEmail");
-const redParagraph = document.querySelector("p");
+const redParagraph = document.querySelectorAll("p");
 const allLabel = [...document.querySelectorAll("label")];
-buttonFormLogin.addEventListener("click", (evt) => {
-  evt.preventDefault();
-  validateUserInfo();
-  if ((redParagraph.style.color == "rgb(230, 12, 13)") == false) {
-    postInfoUser();
-  }
-});
+
 const validateUserInfo = () => {
   if (userName.value.length < 2) {
     allLabel[0].appendChild(messageInvalidName);
@@ -80,9 +74,15 @@ document.querySelector(".fa-eye").addEventListener("click", (evt) => {
   }
   document.getElementById("userPass").focus();
 });
+buttonFormLogin.addEventListener("click", (evt) => {
+  evt.preventDefault();
+  validateUserInfo();
+  postInfoUser();
+});
 const postInfoUser = async () => {
   const fetchPostInfos = await fetch(endpoint, {
     method: "POST",
+    mode: "cors",
     body: JSON.stringify({
       nome: userName.value,
       email: userEmail.value,
