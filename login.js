@@ -3,7 +3,7 @@ const eyeIcon = document.querySelector(".fa-eye");
 const loginKeyInput = document.getElementById("userPass");
 const infoEmail = document.getElementById("userEmail");
 const infoPass = document.getElementById("userPass");
-const endpoint = "http://127.0.0.1:3005/";
+const endpoint = "http://127.0.0.1:3000/";
 const noLoginMsg = document.getElementById("noLoginMsg");
 eyeIcon.addEventListener("click", (evt) => {
   if (loginKeyInput.type == "password") {
@@ -17,7 +17,7 @@ const verifyEmailAndPass = async () => {
     endpoint + infoEmail.value + "/" + infoPass.value
   ).then((data) => {
     if (data.status == 200) {
-      window.open("./index.html", "_self");
+      window.open("./src/insidePages/home.html", "_self");
       noLoginMsg.innerHTML = "";
       localStorage.setItem("userEmail@ContatoCerto", infoEmail.value);
     } else if (data.status == 404) {

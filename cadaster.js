@@ -2,7 +2,7 @@ const buttonFormLogin = document.querySelector("button");
 const userName = document.getElementById("userName");
 const userEmail = document.getElementById("userEmail");
 const userPass = document.getElementById("userPass");
-const endpoint = "http://127.0.0.1:3005";
+const endpoint = "http://127.0.0.1:3000";
 const nameInvalid = document.getElementById("nameInvalid");
 const emailInvalid = document.getElementById("emailInvalid");
 const iconInvalid = document.querySelectorAll(".validadeKeyContainer p");
@@ -12,6 +12,8 @@ const messageInvalidEmail = document.createElement("p");
 messageInvalidEmail.setAttribute("id", "messageInvalidEmail");
 const redParagraph = document.querySelectorAll("p");
 const allLabel = [...document.querySelectorAll("label")];
+const renderMessage = document.getElementById("renderMessage");
+const renderMessageContainer = document.querySelector(".messageAfterCadaster");
 
 const validateUserInfo = () => {
   if (userName.value.length < 2) {
@@ -90,4 +92,14 @@ const postInfoUser = async () => {
     }),
     headers: { "Content-Type": "application/json" },
   });
+  if (fetchPostInfos.status == 200) {
+    renderMessageContainer.style.display = "flex";
+    renderMessage.innerHTML = "Usuário criado no Banco de dados";
+  } else if (fetchPostInfos.status == 400) {
+    renderMessageContainer.style.display = "flex";
+    renderMessage.innerHTML = "Usuário já está cadastrado no Banco de dados";
+  }
+  setTimeout(() => {
+    renderMessageContainer.style.display = "none";
+  }, 1000);
 };
