@@ -12,6 +12,7 @@ const navBarUserElements = (appendElement) => {
       sessionStorage.setItem("numberPage@contatoCerto", 0);
     });
   };
+
   const emailLogin = localStorage.getItem("userEmail@ContatoCerto");
   const backgroundContent = document.createElement("section");
   backgroundContent.setAttribute("class", "userInfo");
@@ -25,9 +26,11 @@ const navBarUserElements = (appendElement) => {
   firstLetterCircle.appendChild(firstLetterName);
   const emailUser = document.createElement("h3");
   emailUser.id = "loginEmail";
+
   emailUser.innerHTML = `${emailLogin}`;
   const exitPageIcon = document.createElement("i");
   exitPageIcon.setAttribute("class", "fa-solid fa-arrow-right-from-bracket");
+
   userInfo.appendChild(firstLetterCircle);
   userInfo.appendChild(emailUser);
   userInfo.appendChild(exitPageIcon);
@@ -74,8 +77,6 @@ const navBarUserElements = (appendElement) => {
   }
 
   allNavs.map((el, idx) => {
-    // const saveNumberPage =
-    //   sessionStorage.getItem("numberPage@contatoCerto", idx) || 0;
     el.addEventListener("click", (evt) => {
       sessionStorage.setItem("numberPage@contatoCerto", idx);
       navOptions.map((element) => {

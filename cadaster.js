@@ -1,8 +1,8 @@
+import { loginCadaster } from "./api.js";
 const buttonFormLogin = document.querySelector("button");
 const userName = document.getElementById("userName");
 const userEmail = document.getElementById("userEmail");
 const userPass = document.getElementById("userPass");
-const endpoint = "http://127.0.0.1:3000";
 const nameInvalid = document.getElementById("nameInvalid");
 const emailInvalid = document.getElementById("emailInvalid");
 const iconInvalid = document.querySelectorAll(".validadeKeyContainer p");
@@ -82,9 +82,10 @@ buttonFormLogin.addEventListener("click", (evt) => {
   postInfoUser();
 });
 const postInfoUser = async () => {
-  const fetchPostInfos = await fetch(endpoint, {
+  console.log(userName.value);
+  const fetchPostInfos = await fetch(loginCadaster, {
     method: "POST",
-    mode: "cors",
+    mode: "no-cors",
     body: JSON.stringify({
       nome: userName.value,
       email: userEmail.value,
@@ -92,12 +93,13 @@ const postInfoUser = async () => {
     }),
     headers: { "Content-Type": "application/json" },
   });
+
   if (fetchPostInfos.status == 200) {
     renderMessageContainer.style.display = "flex";
-    renderMessage.innerHTML = "Usuário criado no Banco de dados";
+    renderMessage.innerHTML = "Email criado no Banco de dados";
   } else if (fetchPostInfos.status == 400) {
     renderMessageContainer.style.display = "flex";
-    renderMessage.innerHTML = "Usuário já está cadastrado no Banco de dados";
+    renderMessage.innerHTML = "Email já está cadastrado no Banco de dados";
   }
   setTimeout(() => {
     renderMessageContainer.style.display = "none";

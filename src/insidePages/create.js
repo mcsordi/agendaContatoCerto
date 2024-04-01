@@ -1,33 +1,21 @@
 import { navBarUserElements } from "/index.js";
 const CreateContainer = document.getElementById("createContainer");
-
-const imgProfile = document.getElementById("profileContact");
-const inputFile = document.getElementById("imageContact");
+const clickOnButton = document.getElementById("confirmInfosButton");
+const definedTime = document.getElementById("dateInp");
 
 navBarUserElements(CreateContainer);
 
-inputFile.addEventListener("change", (evt) => {
-  const reader = new FileReader();
-  reader.addEventListener("load", (evt) => {
-    const localStorageImg = localStorage.setItem(
-      "saveImg@ContatoCerto",
-      reader.result
-    );
-    imgProfile.src = localStorage.getItem("saveImg@ContatoCerto");
-  });
-  reader.readAsDataURL(inputFile.files[0]);
-});
+clickOnButton.setAttribute("class", "hvr-float-shadow");
+const dateToday = new Date();
 
-// inputFile.addEventListener("change", (evt) => {
-//   const reader = new FileReader();
-//   reader.addEventListener("load", () => {
-//     const saveImg = localStorage.setItem("saveImg@ContatoCerto", reader.result);
-//     img.src = localStorage.getItem("saveImg@ContatoCerto");
-//   });
-//   reader.readAsDataURL(inputFile.files[0]);
-// });
-// const saveImg = localStorage.setItem(
-//   "saveImg@ContatoCerto",
-//   URL.createObjectURL(inputFile.files[0])
-// );
-// // img.src = URL.createObjectURL(inputFile.files[0]);
+let month = dateToday.getMonth() + 1;
+if (month < 10) {
+  month = "0" + month;
+} else {
+  month = month;
+}
+const fullDate =
+  dateToday.getFullYear() + "-" + month + "-" + dateToday.getDate();
+clickOnButton.addEventListener("click", (evt) => {
+  const dateDefined = definedTime.value;
+});

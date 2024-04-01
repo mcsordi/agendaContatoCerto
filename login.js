@@ -1,9 +1,8 @@
+import { loginCadaster } from "./api.js";
 const buttonFormLogin = document.querySelector("button");
 const eyeIcon = document.querySelector(".fa-eye");
 const loginKeyInput = document.getElementById("userPass");
-const infoEmail = document.getElementById("userEmail");
-const infoPass = document.getElementById("userPass");
-const endpoint = "http://127.0.0.1:3000/";
+
 const noLoginMsg = document.getElementById("noLoginMsg");
 eyeIcon.addEventListener("click", (evt) => {
   if (loginKeyInput.type == "password") {
@@ -13,8 +12,11 @@ eyeIcon.addEventListener("click", (evt) => {
   }
 });
 const verifyEmailAndPass = async () => {
+  const infoEmail = document.getElementById("userEmail");
+  const infoPass = document.getElementById("userPass");
   const fetchEmailPass = await fetch(
-    endpoint + infoEmail.value + "/" + infoPass.value
+    `${loginCadaster}/${infoEmail.value}/${infoPass.value}`,
+    { method: "GET", mode: "no-cors" }
   ).then((data) => {
     if (data.status == 200) {
       window.open("./src/insidePages/home.html", "_self");

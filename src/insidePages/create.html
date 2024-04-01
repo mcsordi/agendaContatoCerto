@@ -5,30 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/hover.css" />
     <title>Create</title>
   </head>
   <body>
     <div id="createContainer" class="createContainer">
       <div class="createContact">
         <div class="contactUser">
-          <div class="addPhotoContact">
-            <img
-              id="profileContact"
-              src="/src/img/133-1332476_crowd-of-users-transparent-user-icon-png-clipart (1).png"
-            />
+          <div class="InfoContactCreate">
+            <label class="normalLabel">Nome</label>
+            <input type="text" />
+            <label class="normalLabel">Email</label>
+            <input type="email" />
+            <label class="normalLabel">Telefone</label>
+            <input type="tel" />
+            <label class="normalLabel">Nascimento</label>
+            <input id="dateInp" type="date" />
+            <div class="alignButton">
+              <button id="confirmInfosButton">Enviar</button>
+            </div>
           </div>
-          <label class="sendPhotoCadaster" for="imageContact"
-            >Enviar Foto</label
-          >
-          <label>Nome</label>
-          <input type="text" />
-          <label>Email</label>
-          <input type="email" />
-          <label>Telefone</label>
-          <input type="tel" />
-          <label>Nascimento</label>
-          <input type="date" />
-          <input id="imageContact" type="file" accept="image/*" />
         </div>
       </div>
     </div>

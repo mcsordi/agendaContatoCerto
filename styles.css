@@ -263,7 +263,6 @@ input {
   background-color: #fff;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   margin: 0px 10px 0px 0px;
 }
 .letterCircle p {
@@ -271,16 +270,16 @@ input {
   font-family: "Roboto Slab", serif;
   font-weight: 400;
 }
-.fa-solid {
-  cursor: pointer;
-}
+
 #loginEmail {
   margin: 0px 10px 0px 0px;
+  color: #fff;
 }
 .fa-arrow-right-from-bracket {
   margin: 0px 10px 0px 0px;
-  color: #e4e4e6;
+  color: #cccc;
   font-size: 16px;
+  cursor: pointer;
 }
 .messageAfterCadaster {
   display: none;
@@ -310,6 +309,7 @@ input {
   font-size: 12px;
   cursor: pointer;
 }
+
 .navBlue {
   background-color: #1b1a55;
   color: #fff;
@@ -354,34 +354,74 @@ input {
 }
 .contactUser {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 25%;
-  height: 70%;
-  border: 0.01rem solid #aaa;
-  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  background-color: #e4e4e6;
+  border-top: 0px;
+  border-left: 0px;
 }
 .sendPhotoCadaster {
-  background-color: #e60c0d;
+  background-color: #1b1a55;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 0.3rem;
+  color: #fff;
+  font-weight: 500;
 }
 #imageContact {
   display: none;
 }
-.addPhotoContact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 20%;
-  height: 20%;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
+
 .addPhotoContact img {
   width: 100%;
   height: 100%;
+}
+.InfoContactCreate {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.normalLabel {
+  margin: 0.5rem 0 0.2rem 0.3rem;
+}
+
+.InfoContactCreate input {
+  height: 2rem;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+.InfoContactCreate :nth-child(1) {
+  margin-top: 2rem;
+}
+
+.alignButton {
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+.alignButton button {
+  height: 2rem;
+  width: 10rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: #1b1a55;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+}
+
+.inputSelector:nth-child(2),
+.inputSelector:nth-child(6) {
+  background-color: #ccc;
+}
+.nameInfo {
+  display: flex;
+  width: 100%;
+  height: auto;
 }
